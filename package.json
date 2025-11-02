@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-utils",
+  "version": "1.0.0",
+  "description": "Utilities for the Portfolio site (generate social preview images)",
+  "scripts": {
+    "convert-og": "node scripts/convert-og.js"
+  },
+  "dependencies": {
+    "sharp": "^0.32.1"
+  }
+}
