@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>Mohd Monish | Google Skills</title>
+    <link crossorigin href='https://cdn.qwiklabs.com' rel='preconnect'>
+    <link crossorigin href='https://fonts.gstatic.com' rel='preconnect'>
+    <link crossorigin href='https://fonts.googleapis.com' rel='preconnect'>
+    <link as='font' crossorigin='anonymous' href='https://cdn.qwiklabs.com/fonts/google-symbols.woff2' rel='preload'
+        type='font/woff2'>
+    <link as='font' crossorigin='anonymous' href='https://cdn.qwiklabs.com/fonts/material-icons.woff2' rel='preload'
+        type='font/woff2'>
+    <link as='font' crossorigin='anonymous' href='https://cdn.qwiklabs.com/fonts/google-material-icons.woff2'
+        rel='preload' type='font/woff2'>
+    <style>
+        @mixin font_face_props {
+            font-style: normal;
+            font-weight: 400;
+            font-display: block;
+        }
+
+        @font-face {
+            @include font_face_props;
+
+            font-family: 'Google Material Icons';
+            src: url('https://cdn.qwiklabs.com/fonts/google-material-icons.woff2') format('woff2');
+        }
+
+        @font-face {
+            @include font_face_props;
+
+            font-family: 'Material Icons';
+            src: url('https://cdn.qwiklabs.com/fonts/material-icons.woff2') format('woff2');
+        }
+
+        @font-face {
+            @include font_face_props;
+
+            font-family: 'Google Symbols';
+            src: url('https://cdn.qwiklabs.com/fonts/google-symbols.woff2') format('woff2');
+        }
+
+        .material-icons {
+            font-family: 'Material Icons';
+        }
+
+        .google-symbols {
+            font-family: 'Google Symbols';
+        }
+
+        .google-material-icons {
+            font-family: 'Google Material Icons';
+        }
+
+        .material-icons,
+        .google-symbols,
+        .google-material-icons {
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+
+    <meta name="action-cable-url" content="/cable" />
+    <script>
+        //<![CDATA[
+        window.gon = {}; gon.deployment = "google-run";
+        //]]>
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            if (arguments[0] === 'event') {
+                dataLayer.push({ event: arguments[1], eventParams: arguments[2] }, { eventParams: undefined });
+            } else {
+                dataLayer.push(arguments);
+            }
+        }
+        let gtmLoaded = false;
+        function glueCookieNotificationBarLoaded() {
+            if (!gtmLoaded) {
+                dataLayerInit(
+                    false,
+                    false,
+                    false,
+                    false,
+                    'google-run'
+                );
+                (function (w, d, s, l, i) {
+                    w[l] = w[l] || []; w[l].push({
+                        'gtm.start':
+                            new Date().getTime(), event: 'gtm.js'
+                    }); var f = d.getElementsByTagName(s)[0],
+                        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+                })(window, document, 'script', 'dataLayer', "GTM-MBRHNDG7");
+                pushPageEvent();
+                if (typeof sessEvent !== 'undefined') {
+                    pushSessionEvent(sessEvent, sessLoginStatus, sessPreviousPath);
+                }
+                gtmLoaded = true;
+            }
+        }
+    </script>
+    <script
+        src="https://cdn.qwiklabs.com/assets/hallofmirrors/polyfills/webcomponents-loader-2e147cb1679d97581f981243bfc2d1c03dc34a58.js"></script>
+    <script src="https://cdn.qwiklabs.com/assets/head_scripts-78121e337319c81329ed63eb61196ea57f74a57d.js"></script>
+    <script src="https://cdn.qwiklabs.com/assets/vendor-5ee6eafe71fd3831091397e1aa344044a8642273.js"></script>
+    <script src="https://cdn.qwiklabs.com/assets/application-97722d5512c343dea393633db2727ebb243bd13e.js"></script>
+    <script
+        src="https://cdn.qwiklabs.com/assets/hallofmirrors/hallofmirrors-c4f29c6f59f2d00d88ae6a6f02249569a5fca8e1.js"></script>
+    <script src="https://cdn.qwiklabs.com/nk_components/1.1.38/index.js"></script>
+    <script src="https://support.google.com/inapp/api.js"></script>
+
+
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token"
+        content="yvwiwJeM8Ixe0OUD3ycTrHieyLTBj6PMjxWYZjw40znWbEhKoWDcAj38ZOl9HMNCaQGdFEjqvOSkHMKHz2TOWw" />
+    <meta content='width=device-width, initial-scale=1.0, user-scalable=yes' name='viewport'>
+    <meta content='1rRsY0INj8RvwB5EF5pwdxt2A2P9aDgAlsICaJ0d5w0' name='google-site-verification'>
+    <meta content='#3681E4' property='msapplication-TileColor'>
+    <meta content='/google_standard_32.svg' property='msapplication-TileImage'>
+    <meta
+        content='{&quot;userId&quot;:null,&quot;experimentIds&quot;:[&quot;use_docebo_features&quot;,&quot;gwg_catalog&quot;,&quot;onramp&quot;,&quot;lti_no_automatic_user_account&quot;,&quot;chat_off_for_signed_out_users&quot;,&quot;relaunch_subscriptions&quot;,&quot;google_dev_payment&quot;,&quot;search_suggestions&quot;,&quot;show_new_course_exams&quot;,&quot;credly_integration_announcement_modal&quot;,&quot;new_report_fields&quot;,&quot;challenge_lab_fast_track&quot;,&quot;oauth_risc_shutoff&quot;,&quot;iw_ai_assistant&quot;,&quot;gamification_xp&quot;,&quot;canonical_domain_redirect&quot;,&quot;subscription_ux&quot;,&quot;entity_api_keys&quot;,&quot;one_tap&quot;,&quot;search_async&quot;,&quot;show_interview_warmup&quot;,&quot;hide_price&quot;,&quot;wipeout_hard_delete&quot;,&quot;docebo_ux&quot;,&quot;course_monetization&quot;,&quot;learning_plan_search&quot;,&quot;tell_navy_allowed_zones&quot;,&quot;use_mosaic&quot;,&quot;used_in&quot;,&quot;guest_user&quot;,&quot;developer_premium&quot;,&quot;lab_expanded_hint&quot;,&quot;docebo_sync&quot;,&quot;content_provider_admin&quot;,&quot;innovator_sign_in&quot;,&quot;gamification_streaks&quot;,&quot;landing_page&quot;,&quot;new_cards&quot;,&quot;innovator_membership_modal&quot;,&quot;header_search_bar&quot;,&quot;gcsbo_free&quot;,&quot;switch_path_and_explore_headers&quot;,&quot;teams&quot;,&quot;search_sort_by&quot;,&quot;lab_instruction_h2_reduced_margin&quot;,&quot;org_invite_link&quot;,&quot;quota_management&quot;,&quot;hide_unpopular_filters&quot;,&quot;gamification_ui&quot;,&quot;search_updates&quot;,&quot;alexandria_subscriptions_pagination&quot;,&quot;lab_sso&quot;,&quot;feedback&quot;,&quot;catalog_filter_chips&quot;,&quot;lab_ux&quot;,&quot;gamification_leaderboards&quot;,&quot;course_exams&quot;,&quot;relaunch&quot;,&quot;cdn_fonts&quot;,&quot;gamification_ui_data&quot;,&quot;relaunch_collection_ai&quot;,&quot;rise_poc&quot;,&quot;ai_skills&quot;,&quot;relaunch_for_sso&quot;,&quot;catalog_filters_button&quot;,&quot;gamification_leagues&quot;,&quot;sitemap_poc&quot;,&quot;credly&quot;,&quot;lab_warning_experiment&quot;,&quot;front_door_landing_page&quot;,&quot;no_free_chat_rollout&quot;,&quot;innovator_membership&quot;,&quot;gamification&quot;,&quot;activity_sync&quot;,&quot;dedup_badge&quot;,&quot;gamification_achievements&quot;,&quot;program_announcements&quot;,&quot;use_mosaic_cache&quot;,&quot;reroute_new_interview_warmup&quot;,&quot;cache_explore_page_result&quot;,&quot;relaunch_extra&quot;,&quot;search_autocomplete&quot;,&quot;show_annual_purchase_now&quot;,&quot;chime_email_migration&quot;,&quot;support_callouts&quot;]}'
+        name='help-api-product-data'>
+    <meta content='{&quot;groupIds&quot;:[]}' name='help-api-custom-data'>
+    <meta
+        content='Learn and earn with Google Skills, a platform that provides  free training and certifications for Google Cloud partners and beginners. Explore now.'
+        name='description'>
+    <meta content='Google Skills' name='author'>
+    <meta content='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213' property='og:url'>
+    <meta content='Mohd  Monish | Google Skills' property='og:title'>
+    <meta content='website' property='og:type'>
+    <meta content='/google_standard_32.svg' property='og:image'>
+    <meta content='Google Skills' property='og:site_name'>
+    <meta
+        content='Learn and earn with Google Skills, a platform that provides  free training and certifications for Google Cloud partners and beginners. Explore now.'
+        property='og:description'>
+
+
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=ar' hreflang='ar'
+        rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=de' hreflang='de'
+        rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=es' hreflang='es'
+        rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=fr' hreflang='fr'
+        rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=fr_CA'
+        hreflang='fr-CA' rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=he' hreflang='he'
+        rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=id' hreflang='id'
+        rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=it' hreflang='it'
+        rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=ja' hreflang='ja'
+        rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=ko' hreflang='ko'
+        rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=pl' hreflang='pl'
+        rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=pt_BR'
+        hreflang='pt-BR' rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=pt_PT'
+        hreflang='pt-PT' rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=ru' hreflang='ru'
+        rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=tr' hreflang='tr'
+        rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=uk' hreflang='uk'
+        rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=zh' hreflang='zh'
+        rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213?locale=zh_TW'
+        hreflang='zh-TW' rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213' hreflang='en'
+        rel='alternate'>
+    <link href='https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213' hreflang='x-default'
+        rel='alternate'>
+    <link href='/google_standard_32.svg' rel='shortcut icon' type='image/x-icon'>
+    <link href='https:///public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213' rel='canonical'>
+
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Oswald:400|Roboto+Mono:400,700|Roboto:300,400,500,700|Google+Sans:300,400,500,700|Google+Sans+Display:400|Google+Sans+Text:400,500,700"
+        media="screen" />
+
+    <link rel="stylesheet"
+        href="https://cdn.qwiklabs.com/assets/application-d8978f903b834d98947a2eef2ec17a5f13825e06.css" media="all" />
+    <link rel="stylesheet" href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css"
+        media="screen" />
+
+
+    <style>
+        :root {
+            --primary-text-on-surface-color: #355d9c;
+            --primary-text-on-surface-color-dark: #2f538b;
+            --primary-text-on-surface-color-darker: #29497a;
+            --primary-text-on-surface-color-darkest: #243e69;
+            --primary-surface-color: #586d8d;
+            --primary-surface-color-rgb: 88, 109, 141;
+            --primary-surface-color-light: #e0e4eb;
+            --primary-surface-color-lightest: #eff2f5;
+            --text-on-primary-color: #ffffff;
+            --accent-text-on-surface-color: #f000e8;
+            --accent-surface-color: #f9ab00;
+            --accent-surface-color-rgb: 249, 171, 0;
+            --accent-surface-color-light: #ffefcc;
+            --text-on-accent-color: #000000;
+        }
+    </style>
+
+    <!-- Compact badge layout; larger badge images with text below and hide per-badge learn buttons -->
+    <style>
+        /* Arrange badges in a wrapped grid */
+        .profile-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px; /* slightly larger gap to accommodate bigger badges */
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 8px;
+        }
+
+        /* Make each badge stack vertically: image on top, text below */
+        .profile-badge {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: center;
+            margin: 6px !important;
+            padding: 8px !important;
+            min-width: 140px;
+            max-width: 180px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        /* Larger, consistent badge image size */
+        .profile-badge .badge-image img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+        }
+
+        /* Hide the per-badge 'Learn more' ql-button elements */
+        .profile-badge ql-button {
+            display: none !important;
+        }
+
+        /* Smaller title and date text displayed below the badge */
+        .profile-badge .ql-title-medium {
+            display: block;
+            margin: 0;
+            line-height: 1.15;
+            font-size: 0.85rem; /* slightly smaller title */
+            font-weight: 600;
+        }
+
+        .profile-badge .ql-body-medium {
+            display: block;
+            margin: 0;
+            line-height: 1.1;
+            font-size: 0.75rem; /* smaller date */
+            color: #666;
+        }
+    </style>
+
+
+
+</head>
+
+<main id='jump-content'>
+
+
+    <div class='text--center'>
+        <div class='profile-badges'>
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19548668"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/eOtMGZOjQSvSdaUGKhQg3P1NmM1tTJAWCDylfkNcsUY%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Skills Boost Arcade Trivia October 2025 Week 3
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 25, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about Skills Boost Arcade Trivia October 2025 Week 3'
+                    label='Learn more' modal='public-profile-award-modal-0' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19499261"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/Ql42FS00wSMktKwdYLf5ougL%2FoSKiYDzEMIb6GIUwGA%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Skills Boost Arcade Trivia October 2025 Week 2
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 24, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about Skills Boost Arcade Trivia October 2025 Week 2'
+                    label='Learn more' modal='public-profile-award-modal-1' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19472426"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/n6T1UiqouMXyDGMrcgZqR7%2BPnTIqFlamwABmKxbmTKQ%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Skills Boost Arcade Trivia October 2025 Week 4
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 24, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about Skills Boost Arcade Trivia October 2025 Week 4'
+                    label='Learn more' modal='public-profile-award-modal-2' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19452030"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/WwdN4R4asj5ltc5mzYT95NLlRIzLQV1CHSmuWO4xsME%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Level 3: Generative AI
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 23, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about Level 3: Generative AI' label='Learn more'
+                    modal='public-profile-award-modal-3' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19423470"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/yxx235tfKhtqDo33mYWNgvsA4caVKnRgkZsL6rigLmk%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Develop Gen AI Apps with Gemini and Streamlit
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 23, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about Develop Gen AI Apps with Gemini and Streamlit' label='Learn more'
+                    modal='public-profile-award-modal-4' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19422605"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/spi4TkFZiDnh%2BLJlc4FE9ZVVekVSfRu5fHbhAXF0Qtc%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Prompt Design in Vertex AI
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 23, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about Prompt Design in Vertex AI' label='Learn more'
+                    modal='public-profile-award-modal-5' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19306211"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/%2BNbaA0M3gBq5VuaXDw8mwcu8NPrm2n5rvm3PQap0VY4%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Analyze Speech and Language with Google APIs
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 19, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about Analyze Speech and Language with Google APIs' label='Learn more'
+                    modal='public-profile-award-modal-6' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19306001"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/aZjsITFvfelX2j9Fuz6mkj3tRnaGydFKl2fs9xoed8M%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Monitoring in Google Cloud
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 19, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about Monitoring in Google Cloud' label='Learn more'
+                    modal='public-profile-award-modal-7' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19298413"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/AJBRM0cC%2FVpvrjIMS35CqVfEd0UjhG8eaxBDbBVjcVw%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Cloud Speech API: 3 Ways
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 19, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about Cloud Speech API: 3 Ways' label='Learn more'
+                    modal='public-profile-award-modal-8' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19298268"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/2kR1IUyfyAoZJrfuM6Tl7YG8haqF%2FXhlTTY9oAZERfA%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    App Engine: 3 Ways
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 19, 2025 EDT
+                </span>
+                
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19298001"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/iunOgDF0irpbE9neEu3zdrhNGJFdeWVD%2Bl5N%2FHQiXik%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Cloud Run Functions: 3 Ways
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 19, 2025 EDT
+                </span>
+               
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19297571"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/J1q4TwV8Hs4X%2FRNaRwiEzMC2OJmkcy7yFv2BGO8%2FqMw%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Store, Process, and Manage Data on Google Cloud - Console
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 19, 2025 EDT
+                </span>
+              
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19296832"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/7qWmjFjunjE124TwkEeBV3P7wrnLlgJXcyE9AgFkfZY%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Set Up a Google Cloud Network
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 19, 2025 EDT
+                </span>
+              
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19295012"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/rrXzh4xWNIwHgqbKSJlmIfuyLH%2ByQGGgTFMBqwuCQs8%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Build a Website on Google Cloud
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 19, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about Build a Website on Google Cloud' label='Learn more'
+                    modal='public-profile-award-modal-13' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19294345"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/cI70CgNpikhFSRyyozNydlyD11ccIa%2BnvKa8ZfKaHKc%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Develop with Apps Script and AppSheet
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 19, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about Develop with Apps Script and AppSheet' label='Learn more'
+                    modal='public-profile-award-modal-14' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19293326"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/vEEmprpn3wTrYtzWLd625iwX3Hry9r0zDA0BgC8ck18%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    App Building with AppSheet
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 19, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about App Building with AppSheet' label='Learn more'
+                    modal='public-profile-award-modal-15' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19292789"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/kl2TD3IxzSxEF0sDGh3aaC7Bd0wloyT3x5v0zF6TyXw%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Get Started with Google Workspace Tools
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 19, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about Get Started with Google Workspace Tools' label='Learn more'
+                    modal='public-profile-award-modal-16' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19292262"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/O038nGXnkhGqtZp2ya2x7jbcIvtQOSzwBbxHUayPRis%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Get Started with Dataplex
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 19, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about Get Started with Dataplex' label='Learn more'
+                    modal='public-profile-award-modal-17' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19291282"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/QAkPNSY%2BM8oLwNpRYeP%2FYkKxapQqFB74dgCRDPDyIYU%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Get Started with Looker
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 19, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about Get Started with Looker' label='Learn more'
+                    modal='public-profile-award-modal-18' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19290472"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/ZMnnfpydWvA8Jfbe1PQLG3ixKcv%2FrMdrijWrve%2FZb2o%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Get Started with API Gateway
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 19, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about Get Started with API Gateway' label='Learn more'
+                    modal='public-profile-award-modal-19' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19289618"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/M%2F9JEbZ2EYj9rSweFcptS17jEcXaBcloW7xHdmpWKvo%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Get Started with Pub/Sub
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 19, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about Get Started with Pub/Sub' label='Learn more'
+                    modal='public-profile-award-modal-20' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19288438"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/rTXu9lFzsFf7grEGlVjIMS6OTuW1FFbEEb2af4jp0Ew%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    The Basics of Google Cloud Compute
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 19, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about The Basics of Google Cloud Compute' label='Learn more'
+                    modal='public-profile-award-modal-21' outlined tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+                <a class="badge-image"
+                    href="https://www.skills.google/public_profiles/0e96055e-b6ff-40cd-add0-0bcf59314213/badges/19249278"><img
+                        role="presentation"
+                        src="https://cdn.qwiklabs.com/4uxtYpk3K0HpkT%2BGOH%2Bqkg%2FeZZ%2FhZ9yVsg3ZVH46Rrw%3D" />
+                </a><span class='ql-title-medium l-mts'>
+                    Get Started with Cloud Storage
+                </span>
+                <span class='ql-body-medium l-mbs'>
+                    Earned Oct 17, 2025 EDT
+                </span>
+                <ql-button ariaLabel='Learn more about Get Started with Cloud Storage' label='Learn more'
+                    modal='public-profile-award-modal-22' outlined tip='Learn more'></ql-button>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+</ql-drawer-content>
+</ql-drawer-container>
+
+<span class='hidden' id='flash-sibling-before'></span>
+<ql-snackbar></ql-snackbar>
+
+<script data-glue-cookie-notification-bar-category='2A'
+    src='https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js'></script>
+
+
+
+<ql-dialog dismissalLabel='Dismiss' headline='Skills Boost Arcade Trivia October 2025 Week 3'
+    id='public-profile-award-modal-0'>
+    <p>Hey there! You're invited to game on with Skills Boost Arcade Trivia for October Week 3! Play throughout the
+        month and boost your cloud learning journey. Every week, we'll release a new set of questions to test your
+        knowledge of Google Cloud Platform. Get started now and earn the October Trivia Week 3 badge!</p>
+    <ql-button href='/games/32809' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Skills Boost Arcade Trivia October 2025 Week 2'
+    id='public-profile-award-modal-1'>
+    <p>Hey there! You're invited to game on with Skills Boost Arcade Trivia for October Week 2! Play throughout the
+        month and boost your cloud learning journey. Every week, we'll release a new set of questions to test your
+        knowledge of Google Cloud Platform. Get started now and earn the October Trivia Week 2 badge!</p>
+    <ql-button href='/games/32808' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Skills Boost Arcade Trivia October 2025 Week 4'
+    id='public-profile-award-modal-2'>
+    <p>Hey there! You're invited to game on with Skills Boost Arcade Trivia for October Week 4! Play throughout the
+        month and boost your cloud learning journey. Every week, we'll release a new set of questions to test your
+        knowledge of Google Cloud Platform. Get started now and earn the October Trivia Week 4 badge!</p>
+    <ql-button href='/games/32819' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Level 3: Generative AI' id='public-profile-award-modal-3'>
+    <p>Nearly 1 in 3 people worldwide already use AI chatbots in their daily lives, and more than 90% of companies
+        are exploring generative AI for work and learning. In this challenge, you’ll chat with bots that can talk
+        about movies and music, and help you practise French, Spanish, Hindi, Mandarin, and Portuguese. You’ll also
+        explore AI study partners designed for cloud roles like architect, engineer, and digital leader. These labs
+        show how AI can make learning easier, more interactive, and a lot more fun. </p>
+    <ql-button href='/games/32800' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Develop Gen AI Apps with Gemini and Streamlit'
+    id='public-profile-award-modal-4'>
+    <p>Complete the intermediate Develop Gen AI Apps with Gemini and Streamlit skill badge course to demonstrate
+        skills in text generation, applying function calls with the Python SDK and Gemini API, and deploying a
+        Streamlit application with Cloud Run. In this course, you learn Gemini prompting, test Streamlit apps in
+        Cloud Shell, and deploy them as Docker containers in Cloud Run.</p>
+    <ql-button href='/course_templates/978' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Prompt Design in Vertex AI' id='public-profile-award-modal-5'>
+    <p>Complete the introductory Prompt Design in Vertex AI skill badge to demonstrate skills in the following:
+        prompt engineering, image analysis, and multimodal generative techniques, within Vertex AI. Discover how to
+        craft effective prompts, guide generative AI output, and apply Gemini models to real-world marketing
+        scenarios.</p>
+    <ql-button href='/course_templates/976' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Analyze Speech and Language with Google APIs'
+    id='public-profile-award-modal-6'>
+    <p>Earn a skill badge by completing the Analyze Speech and Language with Google APIs quest, where you learn how
+        to use the Natural Language and Speech APIs in real-world settings.</p>
+    <ql-button href='/course_templates/634' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Monitoring in Google Cloud' id='public-profile-award-modal-7'>
+    <p>Complete the introductory Monitoring in Google Cloud skill badge course to demonstrate skills in the
+        following: using Cloud Monitoring tools to monitor resources on Google Cloud.</p>
+    <ql-button href='/course_templates/747' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Cloud Speech API: 3 Ways' id='public-profile-award-modal-8'>
+    <p>Earn the Introductory skill badge by completing the Cloud Speech API: 3 Ways course, where you learn how to
+        use speech related API tools to synthesise and transcribe speech.</p>
+    <ql-button href='/course_templates/700' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='App Engine: 3 Ways' id='public-profile-award-modal-9'>
+    <p>Earn a skill badge by completing the App Engine`:` 3 ways course, where you learn how to use App Engine with
+        Python, Go, and PHP.</p>
+    <ql-button href='/course_templates/671' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Cloud Run Functions: 3 Ways' id='public-profile-award-modal-10'>
+    <p>Earn a Introductory skill badge by completing the Cloud Run functions: 3 Ways course, where you learn how to
+        use Cloud Run functions through the Google Cloud console and on the command line.</p>
+    <ql-button href='/course_templates/696' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Store, Process, and Manage Data on Google Cloud - Console'
+    id='public-profile-award-modal-11'>
+    <p>Cloud Storage, Cloud Functions, and Cloud Pub/Sub are all Google Cloud Platform services that can be used to
+        store, process, and manage data. All three services can be used together to create a variety of data-driven
+        applications. In this skill badge you use Cloud Storage to store images, Cloud Functions to process the
+        images, and Cloud Pub/Sub to send the images to another application.</p>
+    <ql-button href='/course_templates/658' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Set Up a Google Cloud Network' id='public-profile-award-modal-12'>
+    <p>Earn a skill badge by completing the Set Up a Google Cloud Network skill badge course, where you will learn
+        how to perform basic networking tasks on Google Cloud Platform - create a custom network, add subnets
+        firewall rules, then create VMs and test the latency when they communicate with each other.</p>
+    <ql-button href='/course_templates/641' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Build a Website on Google Cloud' id='public-profile-award-modal-13'>
+    <p>Earn the introductory skill badge by completing the Build a Website on Google Cloud skill badge course. This
+        course is based on the Get Cooking in Cloud series and covers`:`Deploying a website on Cloud RunHosting a
+        web app on Compute EngineCreating, deploying, and scaling your website on Google Kubernetes EngineMigrating
+        from a monolithic application to a microservices architecture using Cloud Build</p>
+    <ql-button href='/course_templates/638' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Develop with Apps Script and AppSheet' id='public-profile-award-modal-14'>
+    <p>Earn a skill badge by completing the Develop with Apps Script and AppSheet skill badge course, where you
+        learn how to build chat bots and how to use the script editor in any document.</p>
+    <ql-button href='/course_templates/715' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='App Building with AppSheet' id='public-profile-award-modal-15'>
+    <p>Earn a skill badge by completing the App Building with AppSheet course, where you learn how to build,
+        configure, and publish apps using AppSheet.</p>
+    <ql-button href='/course_templates/635' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Get Started with Google Workspace Tools'
+    id='public-profile-award-modal-16'>
+    <p>Earn an introductory skill badge by completing the Get Started with Google Workspace Tools course, where you
+        will get introduced to Google's collaborative platform and learn to use Gmail, Calendar, Meet, Drive,
+        Sheets, and AppSheet.</p>
+    <ql-button href='/course_templates/676' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Get Started with Dataplex' id='public-profile-award-modal-17'>
+    <p>Complete the introductory Get Started with Dataplex skill badge to demonstrate skills in the following:
+        creating Dataplex assets, creating aspect types, and applying aspects to entries in Dataplex.</p>
+    <ql-button href='/course_templates/726' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Get Started with Looker' id='public-profile-award-modal-18'>
+    <p>Earn a skill badge by completing the Get Started with Looker skill badge course, where you learn how to
+        analyze, visualize, and curate data using Looker Studio and Looker.</p>
+    <ql-button href='/course_templates/647' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Get Started with API Gateway' id='public-profile-award-modal-19'>
+    <p>Earn a skill badge by completing the Get Started with API Gateway skill badge course, where you learn how to
+        use API Gateway to deploy, secure, and manage APIs with a fully managed gateway.</p>
+    <ql-button href='/course_templates/662' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Get Started with Pub/Sub' id='public-profile-award-modal-20'>
+    <p>Earn a skill badge by completing the Get Started with Pub/Sub skill badge course, where you learn how to use
+        Pub/Sub through the Cloud console, how Cloud Scheduler jobs can save you effort, and when Pub/Sub Lite can
+        save you money on high-volume event ingestion.</p>
+    <ql-button href='/course_templates/728' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='The Basics of Google Cloud Compute' id='public-profile-award-modal-21'>
+    <p>Earn a skill badge by completing the The Basics of Google Cloud Compute skill badge course, where you learn
+        how to work with virtual machines (VMs), persistent disks, and web servers using Compute Engine.</p>
+    <ql-button href='/course_templates/754' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+<ql-dialog dismissalLabel='Dismiss' headline='Get Started with Cloud Storage' id='public-profile-award-modal-22'>
+    <p>Earn a skill badge by completing the Get Started with Cloud Storage skill badge course, where you learn how
+        to create a Cloud Storage bucket, how to use the Cloud Storage command line, and how to use Bucket Lock to
+        protect objects in a bucket.</p>
+    <ql-button href='/course_templates/725' label='Learn more' method='get' slot='action' text>
+        Learn more
+    </ql-button>
+</ql-dialog>
+
+
+
+<script>
+    document.addEventListener("turbo:load", function () {
+        ql.initMaterialInputs();
+        initChosen();
+        initTabs();
+        ql.list.init();
+        ql.favoriting.init();
+        ql.header.myAccount.init();
+        initTooltips();
+        ql.autocomplete.init();
+        ql.modals.init();
+        ql.toggleButtons.init();
+        ql.analytics.init();
+        Turbo.session.drive = false;
+        ql.messages.init();
+        ql.jumpContent.init();
+
+    }, { once: true });
+</script>
+
+</body>
+
+</html>
