@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#232526"/>
+      <stop offset="1" stop-color="#414345"/>
+    </linearGradient>
+    <style>
+      .bg { fill: url(#g); }
+      .accent { fill: #FFC107; }
+      .name { font-family: 'Poppins', sans-serif; font-weight:700; font-size:56px; fill: #fff; }
+      .title { font-family: 'Poppins', sans-serif; font-weight:400; font-size:28px; fill: #d1d1d1; }
+      .logo { fill: #ffffff; }
+    </style>
+  </defs>
+  <rect width="1200" height="630" class="bg" rx="18"/>
+
+  <!-- Left decorative circle/logo -->
+  <g transform="translate(80,100)">
+    <circle cx="0" cy="0" r="90" fill="#141E30" opacity="0.85" />
+    <text x="-10" y="28" font-family="Poppins, sans-serif" font-size="42" fill="#FFC107" font-weight="700">M</text>
+  </g>
+
+  <!-- Text -->
+  <g transform="translate(260,220)">
+    <text class="name">Mohd Monish</text>
+    <text class="title" y="56">CSE Undergrad • E-Cell President • Portfolio</text>
+
+    <g transform="translate(0,120)">
+      <rect x="0" y="0" width="420" height="56" rx="8" fill="#ffffff11" />
+      <text x="20" y="36" font-family="Poppins, sans-serif" font-size="20" fill="#ffffff">Explore projects, badges & leadership</text>
+    </g>
+  </g>
+
+  <!-- small accent on bottom-right -->
+  <rect x="980" y="520" width="140" height="80" rx="12" fill="#00000022" />
+  <text x="996" y="570" font-family="Poppins, sans-serif" font-size="18" fill="#FFC107">mohdmonish.tech</text>
+</svg>
