@@ -1,123 +1,118 @@
-document.addEventListener("DOMContentLoaded", function() {
+// Initialize Lenis (Smooth Scroll)
+const isMobile = window.innerWidth < 1024;
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    smooth: !isMobile, // Use native scroll on mobile for maximum stability
+    mouseMultiplier: 1,
+    smoothTouch: false,
+    touchMultiplier: 2,
+});
 
-    // === 1. Typing Animation ===
-    const typingText = document.getElementById("typing-text");
-    const roles = [
-        "a CS Student.",
-        "an E-Cell President.",
-        "a TechAstra Lead.",
-        "a Community Builder.",
-        "an IITB Campus Ambassador."
-    ];
-    let roleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
 
-    function type() {
-        const currentRole = roles[roleIndex];
-        
-        if (isDeleting) {
-            // Deleting text
-            typingText.textContent = currentRole.substring(0, charIndex - 1);
-            charIndex--;
-            if (charIndex === 0) {
-                isDeleting = false;
-                roleIndex = (roleIndex + 1) % roles.length;
-            }
-        } else {
-            // Typing text
-            typingText.textContent = currentRole.substring(0, charIndex + 1);
-            charIndex++;
-            if (charIndex === currentRole.length) {
-                isDeleting = true;
-                // Pause at end of word
-                setTimeout(type, 1500); 
-                return;
-            }
-        }
-        
-        const typeSpeed = isDeleting ? 75 : 150;
-        setTimeout(type, typeSpeed);
-    }
-    type(); // Start the typing effect
+requestAnimationFrame(raf);
 
+document.addEventListener('DOMContentLoaded', () => {
 
-    // === 2. Experience Tabs ===
-    // This is handled by inline `onclick` functions in the HTML,
-    // so we just need the function definition.
-    window.openTab = function(evt, tabName) {
-        // Get all elements with class="tab-content" and hide them
-        const tabcontent = document.getElementsByClassName("tab-content");
-        for (let i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
+    // --- Custom Cursor ---
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
 
-        // Get all elements with class="tab-link" and remove the "active" class
-        const tablinks = document.getElementsByClassName("tab-link");
-        for (let i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
+    // Only active on desktop
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
 
-        // Show the current tab, and add an "active" class to the button that opened the tab
-        document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
+            // Dot follows instantly
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
 
+            // Outline follows with lag
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
 
-    // === 3. Fade-on-Scroll Animation ===
-    const scrollElements = document.querySelectorAll(".scroll-animate");
-
-    const elementInView = (el, dividend = 1) => {
-        const elementTop = el.getBoundingClientRect().top;
-        return (
-            elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
-        );
-    };
-
-    const displayScrollElement = (element) => {
-        element.classList.add("visible");
-    };
-
-    const hideScrollElement = (element) => {
-        element.classList.remove("visible");
-    };
-
-    const handleScrollAnimation = () => {
-        scrollElements.forEach((el) => {
-            if (elementInView(el, 1.25)) {
-                displayScrollElement(el);
+        // Hover Effect using event delegation
+        document.body.addEventListener('mouseover', (e) => {
+            if (e.target.closest('.hover-trigger') || e.target.closest('a') || e.target.closest('button')) {
+                document.body.classList.add('hovering');
+            } else {
+                document.body.classList.remove('hovering');
             }
         });
     }
 
-    // Initial check on load
-    handleScrollAnimation();
-    
-    // Check on scroll
-    window.addEventListener("scroll", () => {
-        handleScrollAnimation();
+    // --- Animations using Anime.js ---
+
+    // 1. Hero Reveal
+    const heroTimeline = anime.timeline({
+        easing: 'easeOutExpo',
+        duration: 1500
     });
 
-    // === 4. Mobile navigation toggle ===
-    const navToggle = document.querySelector('.nav-toggle');
-    const navbar = document.querySelector('.navbar');
-    const navLinks = document.querySelectorAll('.navbar nav a');
-
-    if (navToggle && navbar) {
-        navToggle.addEventListener('click', () => {
-            const isOpen = navbar.classList.toggle('open');
-            navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    heroTimeline
+        .add({
+            targets: '.animate-text',
+            translateY: [100, 0],
+            opacity: [0, 1],
+            delay: anime.stagger(100),
+            clipPath: ['polygon(0 0, 100% 0, 100% 0, 0 0)', 'polygon(0 0, 100% 0, 100% 100%, 0 100%)']
         });
 
-        // Close mobile nav when a link is clicked
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (navbar.classList.contains('open')) {
-                    navbar.classList.remove('open');
-                    navToggle.setAttribute('aria-expanded', 'false');
-                }
-            });
+    // 2. Scroll Reveal Observer
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const animateOnScroll = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                anime({
+                    targets: entry.target,
+                    translateY: [50, 0],
+                    opacity: [0, 1],
+                    duration: 1200,
+                    easing: 'easeOutQuad'
+                });
+                observer.unobserve(entry.target);
+            }
         });
-    }
+    };
+
+    const observer = new IntersectionObserver(animateOnScroll, observerOptions);
+    const revealElements = document.querySelectorAll('.reveal-text');
+    revealElements.forEach(el => {
+        el.style.opacity = '0'; // Initial state
+        observer.observe(el);
+    });
+
+    // --- Magnetic Buttons ---
+    const magneticBtns = document.querySelectorAll('.magnetic-btn');
+    magneticBtns.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const pos = btn.getBoundingClientRect();
+            const x = e.clientX - pos.left - pos.width / 2;
+            const y = e.clientY - pos.top - pos.height / 2;
+
+            btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            btn.children[0].style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'translate(0px, 0px)';
+            btn.children[0].style.transform = 'translate(0px, 0px)';
+        });
+    });
 
 });

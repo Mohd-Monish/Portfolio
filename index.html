@@ -4,390 +4,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohd Monish - CSE Undergrad & E-Cell President</title>
-
-    <!-- Basic SEO -->
-    <meta name="description"
-        content="Portfolio of Mohd Monish — CSE undergrad and E-Cell President. Explore projects, leadership experience, verified Google Skills badges, and contact information.">
-    <meta name="robots" content="index, follow">
-    <meta name="keywords"
-        content="Mohd Monish, Mohd Monish portfolio, mohdmonish, mohdmonish.tech, best portfolio, developer portfolio, CS undergrad, E-Cell President">
-    <link rel="canonical" href="https://mohdmonish.tech/">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mohdmonish.tech/sitemap.xml">
-
-    <!-- Open Graph / Social preview -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Mohd Monish — Portfolio & Leadership">
-    <meta property="og:description"
-        content="Portfolio of Mohd Monish — CSE undergrad and E-Cell President. Explore projects, leadership experience, verified Google Skills badges, and contact information.">
-    <meta property="og:url" content="https://mohdmonish.tech/">
-    <!-- Primary: PNG (preferred), Fallback: SVG -->
-    <meta property="og:image" content="https://mohdmonish.tech/img/og-image.png">
-    <meta property="og:image:secure_url" content="https://mohdmonish.tech/img/og-image.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Mohd Monish — Portfolio">
-    <link rel="alternate" href="https://mohdmonish.tech/img/og-image.svg" as="image">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mohd Monish — Portfolio & Leadership">
-    <meta name="twitter:description"
-        content="Portfolio of Mohd Monish — CSE undergrad and E-Cell President. Explore projects, leadership experience, verified Google Skills badges, and contact information.">
-    <meta name="twitter:image" content="https://mohdmonish.tech/img/og-image.png">
-
+    <title>Monish — Creative Developer</title>
     <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Lenis Smooth Scroll CSV -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Three.js Import Map -->
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+          }
+        }
+    </script>
 </head>
 
 <body>
+    <!-- Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
-    <!-- JSON-LD structured data for improved search results -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Mohd Monish",
-            "url": "/",
-            "image": "img/profile photo linkedin.png",
-            "jobTitle": "CSE Undergrad; E-Cell President",
-            "description": "Portfolio of Mohd Monish — CSE undergrad and E-Cell President. Explore projects, leadership experience, verified Google Skills badges, and contact information.",
-            "sameAs": [
-                "https://www.linkedin.com/in/mohdmonishh",
-                "https://www.github.com/Mohd-Monish",
-                "https://www.instagram.com/monishh.khan",
-                "https://www.geeksforgeeks.org/user/contactmoci3y/",
-                "https://unstop.com/u/mohdmon27582"
-            ]
-        }
-        </script>
+    <!-- Background -->
+    <canvas id="c"></canvas>
 
-    <header class="navbar">
-        <div class="container">
-            <a href="#" class="nav-logo">Mohd Monish</a>
-            <!-- Mobile hamburger toggle -->
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav>
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#showcase">Showcase</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+    <!-- Energize Button -->
+    <button id="energizeBtn" class="magnetic-btn glass-button"
+        style="position:fixed; bottom: 30px; left: 30px; z-index: 1000; padding: 1rem 2rem; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+        Energize
+    </button>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Monish</div>
+        <div class="nav-toggle">Menu</div>
     </header>
 
     <main>
-        <section id="hero">
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <h1>Mohd Monish</h1>
-                    <p class="subtitle">
-                        I am <span class="typing" id="typing-text"></span>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div style="padding: 0 4vw;">
+                <p class="hero-subtitle animate-text">Creative Developer</p>
+                <h1 class="animate-text">Building<br>Digital<br>Excellence.</h1>
+            </div>
+            <div class="hero-footer" style="padding: 0 4vw;">
+                <p class="animate-text">Based in India.<br>Available for global work.</p>
+                <div class="magnetic-btn animate-text">Scroll Down</div>
+            </div>
+        </section>
+
+        <!-- Marquee -->
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <span class="marquee-item">Web Development</span>
+                <span class="marquee-item">UI/UX Design</span>
+                <span class="marquee-item">Strategy</span>
+                <span class="marquee-item">Branding</span>
+                <span class="marquee-item">Motion</span>
+                <!-- Duplicate for seamless loop -->
+                <span class="marquee-item">Web Development</span>
+                <span class="marquee-item">UI/UX Design</span>
+                <span class="marquee-item">Strategy</span>
+                <span class="marquee-item">Branding</span>
+                <span class="marquee-item">Motion</span>
+            </div>
+        </div>
+
+        <!-- About Intro -->
+        <section>
+            <div style="max-width: 1400px; margin: 0 auto;">
+                <h2 class="reveal-text">I help brands stand out<br>in the digital noise.</h2>
+                <div style="display: flex; gap: 4rem; margin-top: 4rem; flex-wrap: wrap;">
+                    <p class="reveal-text" style="flex: 1; min-width: 300px;">
+                        I am Monish, a developer who focuses on the intersection of design and technology. My approach
+                        is simple: clean code, thoughtful design, and an obsession with detail.
                     </p>
-                    <p class="hero-tagline">
-                        Exploring Web, Cloud & Community-Led Tech
+                    <p class="reveal-text" style="flex: 1; min-width: 300px;">
+                        The goal isn't just to make a website. It's to build an asset that builds trust, explains value,
+                        and converts visitors into clients.
                     </p>
-                    <div class="hero-buttons">
-                        <a href="#experience" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="img/profile photo linkedin.png" alt="Mohd Monish Headshot">
                 </div>
             </div>
         </section>
 
-        <section id="about" class="scroll-animate">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>I’m not just studying Computer Science — I’m living it. Whether I’m leading CSMU’s official
-                            tech festival <strong>TechAstra’25</strong>, representing IIT Bombay’s Techfest and E-Cell
-                            as a Campus Ambassador, or running community-focused campaigns with TIN App (Canada), I
-                            believe in building things that matter — and doing it with purpose.</p>
-                        <p>From executing large-scale events like the <strong>Maha Job Fair</strong>, to interning in
-                            operations at MasterMindz, my journey is rooted in blending code, creativity, and community.
-                            Certified in <strong>SAP Business Process Integration (Silver Tier)</strong>, I aim to merge
-                            technical expertise with people-centric execution.</p>
-                        <ul class="about-list">
-                            <li>🔄 Always learning.</li>
-                            <li>💡 Always experimenting.</li>
-                            <li>🔥 Always building.</li>
-                        </ul>
+        <!-- Selected Works -->
+        <section id="work">
+            <p class="hero-subtitle reveal-text" style="margin-bottom: 4rem;">Selected Works</p>
+
+            <!-- Project 1 -->
+            <div class="project-row">
+                <div class="project-img hover-trigger">
+                    <!-- Placeholder, replace with actual image -->
+                    <div style="width:100%; height:100%; background: linear-gradient(45deg, #111, #222);"></div>
+                </div>
+                <div class="project-info">
+                    <h3 class="reveal-text">Fintech<br>Dashboard</h3>
+                    <p class="reveal-text">Strategy & Development</p>
+                    <br>
+                    <a href="#" class="magnetic-btn" style="padding: 1rem 2rem; font-size: 0.8rem;">View Case</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-row reverse">
+                <div class="project-info" style="text-align: right;">
+                    <h3 class="reveal-text">E-Commerce<br>Platform</h3>
+                    <p class="reveal-text">UI/UX & Frontend</p>
+                    <br>
+                    <a href="#" class="magnetic-btn" style="padding: 1rem 2rem; font-size: 0.8rem;">View Case</a>
+                </div>
+                <div class="project-img hover-trigger">
+                    <div style="width:100%; height:100%; background: linear-gradient(45deg, #1a1a1a, #333);"></div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-row">
+                <div class="project-img hover-trigger">
+                    <div style="width:100%; height:100%; background: linear-gradient(45deg, #0d0d0d, #1a1a1a);"></div>
+                </div>
+                <div class="project-info">
+                    <h3 class="reveal-text">Portfolio<br>2024</h3>
+                    <p class="reveal-text">Design & Motion</p>
+                    <br>
+                    <a href="#" class="magnetic-btn" style="padding: 1rem 2rem; font-size: 0.8rem;">View Case</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services List -->
+        <section>
+            <p class="hero-subtitle reveal-text">Services</p>
+            <div class="services-list">
+                <div class="service-item reveal-text hover-trigger">
+                    <h3>Development</h3>
+                    <div class="service-desc">
+                        <p>Frontend, Backend, CMS Integration.</p>
                     </div>
-                    <div class="about-summary">
-                        <h3>What I Bring to the Table</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-bolt"></i> President – E-Cell, CSMU</li>
-                            <li><i class="fa-solid fa-bolt"></i> TechAstra’25 Lead Organizer</li>
-                            <li><i class="fa-solid fa-bolt"></i> Campus Ambassador – IIT Bombay</li>
-                            <li><i class="fa-solid fa-bolt"></i> Intern – MasterMindz (Ops)</li>
-                            <li><i class="fa-solid fa-bolt"></i> SAP BPI Certified – Silver Tier</li>
-                            <li><i class="fa-solid fa-bolt"></i> Frontend Dev – HTML, CSS, JS</li>
-                            <li><i class="fa-solid fa-bolt"></i> Strategy & Team Leadership</li>
-                        </ul>
+                </div>
+                <div class="service-item reveal-text hover-trigger">
+                    <h3>Design</h3>
+                    <div class="service-desc">
+                        <p>UI/UX, prototyping, design systems.</p>
+                    </div>
+                </div>
+                <div class="service-item reveal-text hover-trigger">
+                    <h3>Motion</h3>
+                    <div class="service-desc">
+                        <p>WebGL, animations, interactive experiences.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="scroll-animate">
-            <div class="container">
-                <h2 class="section-title">Experience & Leadership</h2>
-                <div class="experience-container">
-                    <div class="experience-tabs">
-                        <button class="tab-link active" onclick="openTab(event, 'ecell')">E-Cell, CSMU</button>
-                        <button class="tab-link" onclick="openTab(event, 'gdg')">GDG on Campus</button>
-                        <button class="tab-link" onclick="openTab(event, 'techfest')">Techfest, IIT Bombay</button>
-                        <button class="tab-link" onclick="openTab(event, 'ecell-iitb')">E-Cell, IIT Bombay</button>
-                        <button class="tab-link" onclick="openTab(event, 'bharatskillz')">BharatSkillz</button>
-                        <button class="tab-link" onclick="openTab(event, 'moodi')">Mood Indigo, IIT Bombay</button>
-                        <button class="tab-link" onclick="openTab(event, 'mastermindz')">MasterMindz</button>
-                    </div>
-
-                    <div id="ecell" class="tab-content" style="display: block;">
-                        <h3>President <span>@ E-Cell, CSMU</span></h3>
-                        <p class="date">July 2025 - Present (Full-time)</p>
-                        <ul>
-                            <li>Leading CSMU’s official Entrepreneurship Cell under NEC 2025 – IIT Bombay.</li>
-                            <li>Organized "Next Gen Pitch" – the university’s first startup pitching competition.</li>
-                            <li>Driving team management, collaborations, and NEC task execution.</li>
-                            <li>Building startup culture, innovation, and leadership opportunities on campus.</li>
-                        </ul>
-                    </div>
-
-                    <div id="gdg" class="tab-content">
-                        <h3>Management Co-Head <span>@ GDG On Campus, CSMU</span></h3>
-                        <p class="date">Sep 2025 - Present (Part-time)</p>
-                        <ul>
-                            <li>Co-leading the management and operations for Google Developer Group events on campus.
-                            </li>
-                            <li>Coordinating with speakers, managing logistics, and promoting tech workshops.</li>
-                        </ul>
-                    </div>
-
-                    <div id="techfest" class="tab-content">
-                        <h3>Campus Ambassador <span>@ Techfest, IIT Bombay</span></h3>
-                        <p class="date">June 2025 - Present (Internship)</p>
-                        <ul>
-                            <li>Contributing to Asia’s largest student-led tech festival by leading strategic research
-                                across outreach, partnerships, and social impact.</li>
-                            <li>Worked on competitor benchmarking, sector-wise sponsor mapping, and NGO database
-                                creation.</li>
-                        </ul>
-                    </div>
-
-                    <div id="ecell-iitb" class="tab-content">
-                        <h3>Campus Ambassador <span>@ E-Cell, IIT Bombay</span></h3>
-                        <p class="date">June 2025 - Present (Internship)</p>
-                        <ul>
-                            <li>Representing E-Cell IIT Bombay’s initiatives on campus and online.</li>
-                            <li>Driving awareness about entrepreneurship and startup culture.</li>
-                            <li>Organizing engagement activities, workshops, and promotional events.</li>
-                        </ul>
-                    </div>
-
-                    <div id="bharatskillz" class="tab-content">
-                        <h3>Full Stack Web Development Intern <span>@ BharatSkillz</span></h3>
-                        <p class="date"> Oct 2025 - Present</p>
-                        <ul>
-                            <li>Selected for an internship to enhance technical and practical skills through live
-                                projects.</li>
-                            <li>Strengthening foundation in full stack development and real-world applications.</li>
-                        </ul>
-                    </div>
-
-                    <div id="moodi" class="tab-content">
-                        <h3>Indigo Squad Member <span>@ Mood Indigo IIT Bombay</span></h3>
-                        <p class="date">July 2025 - Present (Part-time)</p>
-                        <ul>
-                            <li>Assisting in the organization and promotion of Asia's largest college cultural festival.
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div id="mastermindz" class="tab-content">
-                        <h3>Founder's Office Intern <span>@ MasterMindz Global</span></h3>
-                        <p class="date">March 2025 - July 2025</p>
-                        <ul>
-                            <li>Gained end-to-end exposure to early-stage startup operations.</li>
-                            <li>Designed high-conversion social media content and supported marketing campaigns.</li>
-                        </ul>
-                    </div>
-
-                    <div id="mastermindz" class="tab-content">
-                        <h3>Founder's Office Intern <span>@ MasterMindz Global</span></h3>
-                        <p class="date">March 2025 - July 2025</p>
-                        <ul>
-                            <li>Gained end-to-end exposure to early-stage startup operations.</li>
-                            <li>Designed high-conversion social media content and supported marketing campaigns.</li>
-                        </ul>
-                    </div>
-
+        <!-- Footer -->
+        <footer>
+            <p class="hero-subtitle">Have an idea?</p>
+            <a href="mailto:contact@example.com" class="footer-btn hover-trigger">Let's Talk</a>
+            <div style="display: flex; justify-content: space-between; margin-top: 4rem; opacity: 0.5;">
+                <p>&copy; 2025 Monish</p>
+                <div>
+                    <a href="#" style="margin-left: 2rem;">Twitter</a>
+                    <a href="#" style="margin-left: 2rem;">LinkedIn</a>
+                    <a href="#" style="margin-left: 2rem;">Instagram</a>
                 </div>
             </div>
-        </section>
+        </footer>
 
-        <section id="showcase" class="scroll-animate">
-            <div class="container">
-                <h2 class="section-title">My Showcase</h2>
-                <div class="showcase-grid">
-
-                    <a href="https://drive.google.com/drive/folders/1O5HtwV7HyxbdMZhAwBK_iOq2azrddwVV?usp=sharing"
-                        target="_blank" class="showcase-card">
-                        <i class="fa-solid fa-certificate"></i>
-                        <h3>Certificates</h3>
-                        <p>View all my professional and workshop certificates (GenAI, SAP, etc.)</p>
-                    </a>
-
-                    <a href="https://drive.google.com/drive/folders/1B-iUes6v5s1PWi-WF6JPEvJ9pGnOsXEm?usp=sharing"
-                        target="_blank" class="showcase-card">
-                        <i class="fa-solid fa-file-lines"></i>
-                        <h3>Offer Letters</h3>
-                        <p>See my internship and program offer letters.</p>
-                    </a>
-
-                    <a href="https://drive.google.com/drive/folders/1i-iFfHzzNy10kme53wxRpuU588oXYsz3?usp=sharing"
-                        target="_blank" class="showcase-card">
-                        <i class="fa-solid fa-award"></i>
-                        <h3>Digital Badges</h3>
-                        <p>Explore my collection of skills and achievement badges.</p>
-                    </a>
-
-                </div>
-
-                <div class="google-skills-container scroll-animate">
-                    <h3>Google Skills Profile</h3>
-                    <p>My verified digital marketing and analytics skills from Google.</p>
-                    <a href="gcsb.html" class="btn view-profile-btn" target="_blank" rel="noopener noreferrer">View
-                        Google Skills Profile</a>
-                </div>
-
-            </div>
-        </section>
-
-
-        <section id="skills" class="scroll-animate">
-            <div class="container">
-                <h2 class="section-title">Core Skills</h2>
-                <div class="skills-container">
-
-                    <div class="skill-category">
-                        <h3>Technical Skills</h3>
-                        <div class="skills-grid">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">C</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">HTML5</span>
-                            <span class="skill-tag">CSS3</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">Machine Learning</span>
-                            <span class="skill-tag">Deep Learning</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Leadership & Professional</h3>
-                        <div class="skills-grid">
-                            <span class="skill-tag">Team Leadership</span>
-                            <span class="skill-tag">Strategic Planning</span>
-                            <span class="skill-tag">Community Building</span>
-                            <span class="skill-tag">Operational Excellence</span>
-                            <span class="skill-tag">Problem-solving</span>
-                            <span class="skill-tag">Market Research</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Marketing & Design</h3>
-                        <div class="skills-grid">
-                            <span class="skill-tag">Canva</span>
-                            <span class="skill-tag">Email Marketing</span>
-                            <span class="skill-tag">Google Ads</span>
-                            <span class="skill-tag">Meta Ads</span>
-                            <span class="skill-tag">Data Documentation</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="scroll-animate">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="contact-subtitle">
-                    I'm open to strategic collaborations, startup work, and new opportunities. <br>
-                    Let's connect and build something with impact.
-                </p>
-                <div class="contact-container">
-                    <form action="https://formspree.io/f/mblpqyjl" method="POST" class="contact-form">
-                        <label>
-                            Your Email:
-                            <input type="email" name="email" required>
-                        </label>
-                        <label>
-                            Your Message:
-                            <textarea name="message" rows="6" required></textarea>
-                        </label>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-
-                    <div class="contact-info">
-                        <h3>Find me on other platforms</h3>
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/mohdmonishh" target="_blank" title="LinkedIn"><i
-                                    class="fab fa-linkedin"></i></a>
-                            <a href="https://www.github.com/Mohd-Monish" target="_blank" title="GitHub"><i
-                                    class="fab fa-github"></i></a>
-                            <a href="https://www.instagram.com/monishh.khan" target="_blank" title="Instagram"><i
-                                    class="fab fa-instagram"></i></a>
-                            <!-- Added: GeeksforGeeks & Unstop to match other social icons -->
-                            <a href="https://www.geeksforgeeks.org/user/contactmoci3y/" target="_blank"
-                                title="GeeksforGeeks" class="social-img-link">
-                                <img src="img/GeeksforGeeks.svg" alt="GeeksforGeeks">
-                            </a>
-                            <a href="https://unstop.com/u/mohdmon27582" target="_blank" title="Unstop"
-                                class="social-img-link">
-                                <img src="img/UN-Blue.svg" alt="Unstop">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/mohdmonishh" target="_blank" title="LinkedIn"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://www.github.com/Mohd-Monish" target="_blank" title="GitHub"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.instagram.com/monishh.khan" target="_blank" title="Instagram"><i
-                        class="fab fa-instagram"></i></a>
-            </div>
-            <p>&copy; 2025 Mohd Monish. All rights reserved.</p>
-            <p>Built with <i class="fa-solid fa-heart" style="color: #FFC107;"></i> and code.</p>
-        </div>
-    </footer>
-
+    <script type="module" src="particles.js"></script>
     <script src="script.js"></script>
 </body>
 
